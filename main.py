@@ -11,7 +11,6 @@ def another_some_function(number: int | float | complex = 0) -> None:
     pass
 
 
-
 def get_tuple(lst: list[float | bool]) -> tuple[int]:
     return tuple(int(num) for num in lst)
 
