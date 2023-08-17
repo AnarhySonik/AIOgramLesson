@@ -1,8 +1,12 @@
 import requests
 import time
+import os
+from dotenv import load_dotenv, find_dotenv
 
+
+load_dotenv(find_dotenv())
+BOT_TOKEN: str = os.getenv('API_TOKEN')
 API_URL: str = 'https://api.telegram.org/bot'
-BOT_TOKEN: str = '6390273139:AAFio0y0IrHVAGVDETFJRtx9TUtM2NH5VyU'
 TEXT: str = 'Update!'
 MAX_COUNTER: int = 10
 
