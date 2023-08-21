@@ -1,4 +1,4 @@
-from aiogram import Bot, Dispatcher
+from aiogram import Bot, Dispatcher, F
 from aiogram.filters import Command
 from aiogram.types import Message
 from dotenv import load_dotenv, find_dotenv
@@ -19,6 +19,11 @@ async def process_start_command(message: Message):
 async def process_help_command(message: Message):
     await message.answer('Напиши мне что-нибудь и в ответ '
                          'я пришлю тебе твое сообщение')
+
+
+@dp.message(F.sticker)
+async def send_sticker_echo(message: Message):
+    await message.reply_sticker(message.sticker.file_id)
 
 
 @dp.message()
