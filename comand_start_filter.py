@@ -14,6 +14,16 @@ def my_start_filter(message: Message) -> bool:
     return message.text == '/start'
 
 
+def custom_filter(some_list: list) -> bool:
+    sum: int = 0
+    for i in some_list:
+        if type(i) == int and (i%7 == 0):
+            sum += i
+    return sum < 83
+
+
+
+
 @dp.message(my_start_filter)
 async def process_start_command(message: Message):
     await message.answer(text='Это команда /start')
